@@ -175,8 +175,6 @@ The process of streaming and consuming telemetry data uses three core components
 
 Using Data exhaust API, you can download raw telemetry data or other summary data generated from raw telemetry. The data exhaust api allows filters on various fields on which the data exhaust can be filtered. The data exhaust api requests are run once a day and the data will be available the next day.
 
-**Authentication**
-
 **API Endpoint**
 
 POST /data/v3/dataset/request/submit
@@ -239,7 +237,7 @@ The body refers to the format of the request. It contains metadata about the dat
   }
 ```
 
-#### Response Body 
+**Response Body**
 
 Response body sample with indicative values:
 
@@ -311,9 +309,9 @@ Response body sample with indicative values:
 }
 ```
 > **Note**:
-> <b>start_date</b> and <b>end_date</b> must be in YYYY-MM-DD format
-> <b>dataset_id</b> can be either eks-consumption-raw or eks-consumption-summary
-> The fields on which filters can be applied are partner_id, group_user, content_id, tags, events, app_id, channel, user_id, device_id, metrics_type, mode
+> <b>start_date</b> and <b>end_date</b> must be in YYYY-MM-DD format</br>
+> <b>dataset_id</b> can be either eks-consumption-raw or eks-consumption-summary</br>
+> The fields on which filters can be applied are partner_id, group_user, content_id, tags, events, app_id, channel, user_id, device_id, metrics_type, mode<br/>
 > The signed url uses the Shared Access Signature url feature of the Azure blob storage. For more information, refer to https://docs.microsoft.com/en-us/azure/storage/common/storage-dotnet-shared-access-signature-part-1
    
     {
@@ -341,8 +339,6 @@ Response body sample with indicative values:
 ### Pulling and extracting data using Channel exhaust API 
 
 Using the Channel exhaust API, you can download raw telemetry data or other summary data generated from raw telemetry for a specific channel. The channel exhaust api requests are executed immediately and the download url to download data will be available for download.
-
-**Authentication**
 
 **API Endpoint**
 
@@ -404,9 +400,9 @@ Response body sample with indicative values:
 ```
 
 > **Note**:
-> <b>datasetId</b> can be either raw or summary
-> <b>type</b> will be the type of the summary to download if the datasetId is summary. Default will be wfs (Workflow Summary)
-> <b>from</b> and <b>to</b> dates must be in YYYY-MM-DD format
+> <b>datasetId</b> can be either raw or summary</br>
+> <b>type</b> will be the type of the summary to download if the datasetId is summary. Default will be wfs (Workflow Summary)<br/>
+> <b>from</b> and <b>to</b> dates must be in YYYY-MM-DD format<br/>
 
 * The API allows you to download exhaust data for a maximum of one month date range.
 
@@ -478,15 +474,12 @@ For Portal content sessions:
   }
   ```
 
-## Concept Covered
+## Concepts Covered
 
 - Telemetry Services
-
 - Telemetry Events
-
 - Data Exhaust API
-
+- Channel Exhaust API
 - Data Storage
-
 - Data Population
 
